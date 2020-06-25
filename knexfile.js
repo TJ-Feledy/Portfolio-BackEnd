@@ -1,4 +1,5 @@
 // Update with your config settings.
+const pg = require("pg")
 
 module.exports = {
 
@@ -20,4 +21,15 @@ module.exports = {
       }
     }
   },
+  production: {
+    client: "pg",
+    useNullAsDefault: true,
+    connection: process.env.DATABASE_URL,
+    migrations: {
+      directory: './database/migrations'
+    },
+    seeds: {
+      directory: './database/seeds'
+    }
+  }
 };
