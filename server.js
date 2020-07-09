@@ -36,7 +36,7 @@ server.post('/text', (req, res) => {
         })
         .catch((err) => {
             console.log(err)
-            res.send(JSON.stringify({ success: false, error: req.body }))
+            res.send(JSON.stringify({ success: false, error: err }))
         })
 })
 
